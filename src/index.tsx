@@ -60,6 +60,7 @@ export default class extends React.Component<any>{
     this.scrollState = ScrollState;
   }
 
+
   public render(){
     const { lines } = this.state
     return (

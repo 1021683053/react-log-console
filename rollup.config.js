@@ -27,14 +27,15 @@ export default {
   external: ["classnames", "react-scrollbars-custom"],
   plugins: [
     external(),
+    typescript({
+      include: [ "*.ts+(|x)", "**/*.ts+(|x)" ],
+      exclude: [ "*.d.ts", "**/*.d.ts" ],
+      rollupCommonJSResolveHack: true,
+      clean: true
+    }),
     postcss({
       modules: true,
       extensions: ['.css', '.less']
-    }),
-    typescript({
-      include: ['src/**/*'],
-      rollupCommonJSResolveHack: true,
-      clean: true
     }),
     url(),
     svgr(),
